@@ -43,7 +43,7 @@
                             <a class="nav-link" href="#">Produit Soldé</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Panier</a>
+                        <a class="nav-link" href="#">Panier</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
