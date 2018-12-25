@@ -52,19 +52,19 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <input class="form-control mr-sm-2" type="search" placeholder="Nike, PS4..." aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
                     </form>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
                             @endif
                         @else
@@ -95,7 +95,7 @@
             @yield('content')
         </main>
     </div>
-        <nav class="navbar fixed-bottom navbar-light bg-light" style="background-color: #e3f2fd;">
+        <nav class="navbar fixed-bottom navbar-light bg-dark" >
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="http://vps627012.ovh.net/~piscine/piscine/resources/image/logo.png" width="40" height="40" class="d-inline-block align-top" alt ="NotrePlellie">
