@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" >
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="http://vps627012.ovh.net/~piscine/piscine/public/">
                     <img src="http://vps627012.ovh.net/~piscine/piscine/resources/image/logo.png" width="60" height="60" class="d-inline-block align-top" alt ="NotrePlellie">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -37,7 +37,7 @@
                                 <a class="dropdown-item" href="#">Basket</a>
                                 <a class="dropdown-item" href="#">Tong</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Jeux Vidéos</a>
+                                <a class="dropdown-item" href="#">Jeux Vidéo</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">PC</a>
                                 <a class="dropdown-item" href="#">Xbox One</a>
@@ -94,8 +94,8 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
-        <nav class="navbar fixed-bottom navbar-light bg-dark" >
+    
+        <nav class="navbar navbar-light bg-dark" >
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="http://vps627012.ovh.net/~piscine/piscine/resources/image/logo.png" width="40" height="40" class="d-inline-block align-top" alt ="NotrePlellie">
@@ -105,5 +105,6 @@
                 </span>
             </div>
         </nav>
+    </div>
 </body>
 </html>

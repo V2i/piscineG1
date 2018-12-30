@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /storage/*.key
+/vendor
 /.idea
 /.vscode
 /nbproject
@@ -13,5 +14,3 @@ yarn-error.log
 .env
 .phpunit.result.cache
 config/database.php
-sftp-config.json
-piscine.ppk
