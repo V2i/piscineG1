@@ -12,28 +12,28 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
+                            <label for="nom" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="nom" type="text" class="form-control{{ $errors->has('NomClient') ? ' is-invalid' : '' }}" name="NomClient" value="{{ old('NomClient') }}" required autofocus>
 
-                                @if ($errors->has('nom'))
+                                @if ($errors->has('NomClient'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('nom') }}</strong>
+                                        <strong>{{ $errors->first('NomClient') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Prenom') }}</label>
+                            <label for="prenom" class="col-md-4 col-form-label text-md-right">{{ __('Prenom') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="prenom" type="text" class="form-control{{ $errors->has('PrenomClient') ? ' is-invalid' : '' }}" name="PrenomClient" value="{{ old('PrenomClient') }}" required autofocus>
 
-                                @if ($errors->has('prenom'))
+                                @if ($errors->has('PrenomClient'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('prenom') }}</strong>
+                                        <strong>{{ $errors->first('PrenomClient') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -54,14 +54,42 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mot de Passe') }}</label>
+                            <label for="rue" class="col-md-4 col-form-label text-md-right">{{ __('Adresse Rue') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                <input id="rue" type="text" class="form-control{{ $errors->has('RueClient') ? ' is-invalid' : '' }}" name="RueClient" value="{{ old('RueClient') }}" required>
 
-                                @if ($errors->has('password'))
+                                @if ($errors->has('RueClient'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('RueClient') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="detail" class="col-md-4 col-form-label text-md-right">{{ __('Détail Rue') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="detail" type="text" class="form-control{{ $errors->has('DetailRueClient') ? ' is-invalid' : '' }}" name="DetailRueClient" value="{{ old('DetailRueClient') }}" required>
+
+                                @if ($errors->has('DetailRueClient'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('DetailRueClient') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="cp" class="col-md-4 col-form-label text-md-right">{{ __('Code Postale') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cp" type="text" class="form-control{{ $errors->has('CPClient') ? ' is-invalid' : '' }}" name="CPClient" value="{{ old('CPClient') }}" required>
+
+                                @if ($errors->has('CPClient'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('CPClient') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -88,4 +116,5 @@
         </div>
     </div>
 </div>
+<div style="padding-bottom: 60px"></div>
 @endsection

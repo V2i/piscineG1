@@ -94,8 +94,8 @@
         <main class="py-4">
             @yield('content')
         </main>
-    
-        <nav class="navbar navbar-light bg-dark" >
+        
+        <nav class="navbar fixed-bottom navbar-light bg-dark" >
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="http://vps627012.ovh.net/~piscine/piscine/resources/image/logo.png" width="40" height="40" class="d-inline-block align-top" alt ="NotrePlellie">
