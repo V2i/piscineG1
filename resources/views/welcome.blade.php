@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 <div class="container-fluid jumbotron" style="background-color: rgb(230,230,250); margin-top: -40px;">
@@ -72,7 +72,7 @@
           		<a href="#"><img class="card-img-top" src="http://placehold.it/700x400"></a>
           		<div class="card-body">
           			<h4 class="card-title">
-          				<a href="#">Produit 3</a>
+          				<a href="{{route('produit',['CodeProduit'=>4])}}";>Nike Air</a>
           			</h4>
           			<h5>prix €</h5>
           			<p class="card-text">description</p>
