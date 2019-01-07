@@ -44,14 +44,6 @@
                                 <a class="dropdown-item" href="#">PS4</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Espace Client</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="http://vps627012.ovh.net/~piscine/piscine/public/cart">
-                            <img src="http://vps627012.ovh.net/~piscine/piscine/resources/image/basket.png" width="40" height="40" class="d-inline-block align-top" alt ="Panier">
-                        </a>
-                        </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Nike, PS4..." aria-label="Search">
@@ -70,22 +62,24 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://vps627012.ovh.net/~piscine/piscine/public/cart">
+                                    <img src="http://vps627012.ovh.net/~piscine/piscine/resources/image/basket.png" width="40" height="40" class="d-inline-block align-top" alt ="Panier">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://vps627012.ovh.net/~piscine/piscine/public/home">Espace Client</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Deconnexion') }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">
+                                    @csrf
+                                </form>
                             </li>
                         @endguest
                     </ul>

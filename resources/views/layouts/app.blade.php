@@ -45,7 +45,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Espace Client</a>
+                            <a class="nav-link" href="http://vps627012.ovh.net/~piscine/piscine/public/home">Espace Client</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="http://vps627012.ovh.net/~piscine/piscine/public/cart">
