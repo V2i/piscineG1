@@ -54,6 +54,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="telephone" class="col-md-4 col-form-label text-md-right">{{ __('Téléphone') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="telephone" type="text" class="form-control{{ $errors->has('TelClient') ? ' is-invalid' : '' }}" name="TelClient" value="{{ old('TelClient') }}" required>
+
+                                @if ($errors->has('TelClient'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('TelClient') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="rue" class="col-md-4 col-form-label text-md-right">{{ __('Adresse Rue') }}</label>
 
                             <div class="col-md-6">
@@ -71,11 +85,25 @@
                             <label for="detail" class="col-md-4 col-form-label text-md-right">{{ __('Détail Rue') }}</label>
 
                             <div class="col-md-6">
-                                <input id="detail" type="text" class="form-control{{ $errors->has('DetailRueClient') ? ' is-invalid' : '' }}" name="DetailRueClient" value="{{ old('DetailRueClient') }}" required>
+                                <input id="detail" type="text" class="form-control{{ $errors->has('DetailRueClient') ? ' is-invalid' : '' }}" name="DetailRueClient" value="{{ old('DetailRueClient') }}">
 
                                 @if ($errors->has('DetailRueClient'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('DetailRueClient') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="ville" class="col-md-4 col-form-label text-md-right">{{ __('Ville') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="ville" type="text" class="form-control{{ $errors->has('VilleClient') ? ' is-invalid' : '' }}" name="VilleClient" value="{{ old('VilleClient') }}" required>
+
+                                @if ($errors->has('VilleClient'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('VilleClient') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -90,6 +118,20 @@
                                 @if ($errors->has('CPClient'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('CPClient') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mot de Passe') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="{{ old('password') }}" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                             </div>

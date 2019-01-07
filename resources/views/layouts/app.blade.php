@@ -48,7 +48,9 @@
                             <a class="nav-link" href="#">Espace Client</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Panier</a>
+                        <a class="nav-link" href="http://vps627012.ovh.net/~piscine/piscine/public/cart">
+                            <img src="http://vps627012.ovh.net/~piscine/piscine/resources/image/basket.png" width="40" height="40" class="d-inline-block align-top" alt ="Panier">
+                        </a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">

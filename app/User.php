@@ -11,9 +11,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $table = 'client';
-    public $primarykey = 'Numclient';
-
-}
+    public $primaryKey = 'NumClient';
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'NomClient', 'PrenomClient', 'email', 'password', 'RueClient', 'DetailRueClient', 'CPClient',
+        'NomClient', 'PrenomClient', 'email', 'TelClient', 'password', 'RueClient', 'DetailRueClient', 'VilleClient', 'CPClient',
     ];
 
     /**
