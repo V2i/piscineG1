@@ -14,3 +14,6 @@ yarn-error.log
 .env
 .phpunit.result.cache
 config/database.php
+piscine.ppk
+sftp-config.json
+test.php
