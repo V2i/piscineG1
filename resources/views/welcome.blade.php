@@ -1,9 +1,14 @@
 @extends('layouts.app2')
 
 @section('content')
-<div class="container-fluid jumbotron" style="background-color: rgb(230,230,250); margin-top: -40px;">
+<style>
+.whitetext {
+        color: white;
+}
+</style>
+<div class="container-fluid jumbotron" style="background-image:url('http://vps627012.ovh.net/~piscine/piscine/resources/image/bandeau-montpellier.jpg'); margin-top: -40px;">
     <div class="container text-center text">
-        <h1> La CCI vous souhaite la bienvenue sur sa marketplace de l'Hérault </h1>      
+        <h1 class="whitetext"> La CCI vous souhaite la bienvenue sur sa marketplace de l'Hérault </h1>
     </div>
 </div>
 <div class="container">
@@ -43,39 +48,33 @@
 
           <div class="col-lg-4 col-md-3 mb-4">
           	<div class="card h-100">
-          		<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          		<a href="#"><img class="card-img-top" src="http://vps627012.ovh.net/~piscine/piscine/resources/image/bonplan.jpg" alt=""></a>
           		<div class="card-body">
           			<h4 class="card-title">
-          				<a href="#">Produit 1</a>
+          				<a href="{{route('produit',['CodeProduit'=>6])}}";>Sweat adidas</a>
           			</h4>
-          			<h5> prix €</h5>
-          			<p class="card-text">description</p>
           		</div>
           	</div>
           </div>
 
           <div class="col-lg-4 col-md-3 mb-4">
           	<div class="card h-100">
-          		<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          		<a href="#"><img class="card-img-top" src="http://vps627012.ovh.net/~piscine/piscine/resources/image/bonplan.jpg" alt=""></a>
           		<div class="card-body">
           			<h4 class="card-title">
-          				<a href="#">Produit 2</a>
+          				<a href="{{route('produit',['CodeProduit'=>5])}}";>Timberlands</a>
           			</h4>
-          			<h5>prix €</h5>
-          			<p class="card-text">description</p>
           		</div>
           	</div>
           </div>
 
           <div class="col-lg-4 col-md-3 mb-4">
           	<div class="card h-100">
-          		<a href="#"><img class="card-img-top" src="http://placehold.it/700x400"></a>
+          		<a href="#"><img class="card-img-top" src="http://vps627012.ovh.net/~piscine/piscine/resources/image/bonplan.jpg"></a>
           		<div class="card-body">
           			<h4 class="card-title">
           				<a href="{{route('produit',['CodeProduit'=>4])}}";>Nike Air</a>
           			</h4>
-          			<h5>prix €</h5>
-          			<p class="card-text">description</p>
           		</div>
           	</div>
           </div>

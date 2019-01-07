@@ -28,11 +28,10 @@ Route::get('/pageProduit/{CodeProduit}', 'ProduitController@afficherProduit')->n
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+ 
 
 Route::get('/carte',function() {
 	return view('carte');
 });
 
-Route::get('/basket',function() {
-	return view('basket');
-});
+Route::get('/panier', 'BasketController@afficherPanier')->name('basket');
