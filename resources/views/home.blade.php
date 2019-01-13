@@ -14,13 +14,22 @@
                             </div>
                         @endif
 
-                        <h2>Vous êtes connecté !</h2>
-                        
-                        
-                        
+                        <h3>Bienvenue {{ Auth::user()->PrenomClient }} {{ Auth::user()->NomClient }}, votre solde est de 
+                            @if(Auth::user()->SoldeClient === NULL)
+                                0
+                            @else
+                                {{Auth::user()->SoldeClient }}
+                            @endif
+                        point.</h3>
+                        <p>Nom : {{ Auth::user()->NomClient }}<br>
+                        Prénom : {{ Auth::user()->PrenomClient }}<br>
+                        Adresse Mél. : {{ Auth::user()->email }}<br>
+                        Tél. : {{ Auth::user()->TelClient }}<br>
+                        Adresse : {{ Auth::user()->VilleClient }}, {{ Auth::user()->CPClient }}<br>
+                        {{ Auth::user()->RueClient }}, {{ Auth::user()->DetailRueClient }}<br></p>
+                        <a href="{{ route('update') }}">Modifier mes informations personnelles.</a>
                     </div>
                 </div>
-                <div style="padding: 20px"><a href="http://vps627012.ovh.net/~piscine/piscine/public/">Retouner a la page d'acceuil.</a></div>
             </div>
         </div>
     </div>

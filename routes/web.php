@@ -13,14 +13,10 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/index', function () {
     return view('index');
-});
-
-Route::get('/test_nesrine', function() {
-	return view('home');
 });
 
 Route::get('/pageProduit/{CodeProduit}', 'ProduitController@afficherProduit')->name('produit'); 
@@ -28,11 +24,24 @@ Route::get('/pageProduit/{CodeProduit}', 'ProduitController@afficherProduit')->n
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+ 
 
 Route::get('/carte',function() {
 	return view('carte');
-});
+})->name('carte');
 
-Route::get('/basket',function() {
-	return view('basket');
-});
+Route::get('/panier', 'BasketController@afficherPanier')->name('basket');
+
+Route::get('/panier2/{CodeProduit}', 'BasketController@ajouterElement')->name('basket2');
+
+Route::get('/update', function () {
+    return view('update');
+})->name('update');
+
+Route::get('/search', function () {
+    return view('search');
+})->name('search');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');

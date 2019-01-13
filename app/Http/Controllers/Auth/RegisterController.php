@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Panier;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -51,7 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'NomClient' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:client'],
-            'TelClient' => ['string', 'max:255']
+            'TelClient' => ['string', 'max:255'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'PrenomClient' => ['required', 'string', 'max:255'],
             'RueClient' => ['string', 'max:255'],
@@ -70,7 +72,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'NomClient' => $data['NomClient'],
             'email' => $data['email'],
             'TelClient' => $data['TelClient'],
@@ -81,5 +83,13 @@ class RegisterController extends Controller
             'VilleClient' => $data['VilleClient'],
             'CPClient' => $data['CPClient'],
         ]);
+
+        $panier = new Panier();
+        $panier->PanierReserve = 0;
+        $panier->PanierPaye = 0;
+        $panier->NumClient = $user->NumClient;
+        $panier->save();
+
+        return $user;
     }
 }

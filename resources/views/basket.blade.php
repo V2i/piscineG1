@@ -1,91 +1,64 @@
-@extends('layouts.app2')
+@extends('layouts.app')
 
 @section('content')
-<div class="container-fluid jumbotron" style="background-color: rgb(230,230,250); margin-top: -40px;">
-    <div class="container text-center text">
-        <h1> La CCI vous souhaite la bienvenue sur sa marketplace de l'Hérault </h1>      
+<link href="{{ asset('css/stylepanier.css') }}" rel="stylesheet">
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Mon panier</h1>
+     </div>
+</section>
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Produit</th>
+                            <th scope="col">Disponibilité</th>
+                            <th scope="col" class="text-center">Quantité</th>
+                            <th scope="col" class="text-right">Prix</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach(Auth::user()->basket->products as $product)
+                            <td><img src="{{ $product->LienPhotoProduit }}" style="width: 50px; height: 50px;" /> </td>
+                            <td>{{ $product->NomProduit }}</td>
+                            <td>En stock</td>
+                            <td><input class="form-control" type="text" value="1" /></td>
+                            <td class="text-right">{{ $product->PrixProduit }}€</td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                            <tr>
+                            @endforeach
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <a href="{{route('welcome')}}";><button type="button" class="btn btn-light">Continuer mes achats</button></a>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <button style=class="btn btn-lg btn-block btn-success text-uppercase" onclick="validation()">Valider la commande</button>
+                    <script>
+                    function validation() {
+                      alert("Commande validée !");}
+                    </script>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div class="container">
-  <div class="row justify-content-center">
-      <div class="col-lg-9"> 
-
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel" data-interval="5000">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="img-responsive d-block img-fluid" style="margin: 0 auto 0 auto;" src="http://vps627012.ovh.net/~piscine/piscine/resources/image/timb.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="img-responsive d-block img-fluid" style="margin: 0 auto 0 auto;" src="http://vps627012.ovh.net/~piscine/piscine/resources/image/PS4-icon.png" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="img-responsive d-block img-fluid" style="margin: 0 auto 0 auto;" src="http://vps627012.ovh.net/~piscine/piscine/resources/image/pc.jpg" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" id="cc" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span id="cc" class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div> <!-- fin carousel -->
-
-        <div style="padding-top: 10px"></div>
-        <h3 style="font-family: serif;">Les bons plans</h3>
-        <div class="row justify-content-center">
-
-          <div class="col-lg-4 col-md-3 mb-4">
-          	<div class="card h-100">
-          		<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          		<div class="card-body">
-          			<h4 class="card-title">
-          				<a href="#">Produit 1</a>
-          			</h4>
-          			<h5> prix €</h5>
-          			<p class="card-text">description</p>
-          		</div>
-          	</div>
-          </div>
-
-          <div class="col-lg-4 col-md-3 mb-4">
-          	<div class="card h-100">
-          		<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          		<div class="card-body">
-          			<h4 class="card-title">
-          				<a href="#">Produit 2</a>
-          			</h4>
-          			<h5>prix €</h5>
-          			<p class="card-text">description</p>
-          		</div>
-          	</div>
-          </div>
-
-          <div class="col-lg-4 col-md-3 mb-4">
-          	<div class="card h-100">
-          		<a href="#"><img class="card-img-top" src="http://placehold.it/700x400"></a>
-          		<div class="card-body">
-          			<h4 class="card-title">
-          				<a href="{{route('produit',['CodeProduit'=>4])}}";>Nike Air</a>
-          			</h4>
-          			<h5>prix €</h5>
-          			<p class="card-text">description</p>
-          		</div>
-          	</div>
-          </div>
-
-        </div> <!-- fin row -->
-      </div>
-      <!-- /.col-lg-9 -->
-  </div>
-  <!-- /.row -->
-</div>
-<!-- /.container -->
 <div style="padding-bottom: 20px"></div>
 @endsection

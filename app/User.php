@@ -30,4 +30,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function basket() {
+        return $this->belongsTo('App\Panier', 'NumClient', 'NumClient');
+    }
 }
